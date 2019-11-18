@@ -1,9 +1,10 @@
 <h1>Have some fun with Dinosaur</h1>
 
-<!-- <div class="cards">
+<div class="dino-cards">
 <ul>
   <% @dinosaurs.each do |dinosaur| %>
+    <li><%= link_to dinosaur.name, dinosaur_path(dinosaur) %></li>
     <li><%= link_to dinosaur.species, dinosaur_path(dinosaur) %></li>
   <% end %>
 </ul>
-</div> -->
+</div>
