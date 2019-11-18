@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :Dinosaurs
+  has_many :dinosaurs
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
