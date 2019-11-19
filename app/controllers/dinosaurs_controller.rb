@@ -12,6 +12,11 @@ class DinosaursController < ApplicationController
     redirect_to dinosaur_path(@dinosaur)
   end
 
+  def update
+    @dinosaur.update(dinosaur_params)
+    redirect_to dinosaur_path(@dinosaur)
+  end
+
   private
 
   def dinosaur_params
