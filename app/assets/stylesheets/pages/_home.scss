@@ -1,6 +1,7 @@
 
-body {
+#background_image {
   background-image: url("http://minizoo.org.uk/wp-content/uploads/2016/06/dinosaur-costume-pic-ordered-1080x786.jpg"), linear-gradient(rgba(0,0,0,5.3));
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: calc(100vh - 66px);
 }
