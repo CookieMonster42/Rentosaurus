@@ -9,7 +9,12 @@ class DinosaursController < ApplicationController
 
   def create
     @dinosaur = Dinosaur.create(dinosaur_params)
-    redirect_to dinosaur_path(@dinosaur)
+
+    if @dinosaur.save
+      redirect_to dinosaurs_path
+    else
+      render "new"
+    end
   end
 
   def update
@@ -22,4 +27,5 @@ class DinosaursController < ApplicationController
   def dinosaur_params
     params.require(:dinosaur).permit(:name, :species, :age, :gender, :food, :price, :policy, :habits, :location)
   end
+
 end
