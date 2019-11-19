@@ -1,6 +1,36 @@
 
-body {
-  background-image: url("http://minizoo.org.uk/wp-content/uploads/2016/06/dinosaur-costume-pic-ordered-1080x786.jpg"), linear-gradient(rgba(0,0,0,5.3));
-  background-size: cover;
-  background-repeat: no-repeat;
+// body {
+//   background-image: url("http://minizoo.org.uk/wp-content/uploads/2016/06/dinosaur-costume-pic-ordered-1080x786.jpg"), linear-gradient(rgba(0,0,0,5.3));
+//   background-size: cover;
+//   background-repeat: no-repeat;
+// }
+
+.banner{
+  // background-image: url(https://unsplash.com/photos/hhwxgGPWg-A);
+  background-color: lightblue;
+  width: cover;
+  height: 100vh;
+  position: relative;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+
+.button {
+  position: absolute;
+  border: 3px solid white;
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: white;
+  top: 65%;
+  left: 10%;
 }
