@@ -4,4 +4,33 @@
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 66px);
+
+.banner{
+  // background-image: url(https://unsplash.com/photos/hhwxgGPWg-A);
+  background-color: lightblue;
+  width: cover;
+  height: 100vh;
+  position: relative;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+
+.button {
+  position: absolute;
+  border: 3px solid white;
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: white;
+  top: 65%;
+  left: 10%;
 }
