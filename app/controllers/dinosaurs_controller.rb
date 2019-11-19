@@ -6,18 +6,19 @@ class DinosaursController < ApplicationController
   def new
     @dinosaur = Dinosaur.new
   end
-  
+
   def show
     @dinosaur = Dinosaur.find(params[:id])
   end
-  
+
   def create
     @dinosaur = Dinosaur.create(dinosaur_params)
-
+    @dinosaur.user_id = current_user.id
     if @dinosaur.save
       redirect_to dinosaurs_path
     else
       render "new"
+
     end
   end
 
