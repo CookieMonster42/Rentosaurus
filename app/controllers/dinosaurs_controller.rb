@@ -9,11 +9,17 @@ class DinosaursController < ApplicationController
 
   def create
     @dinosaur = Dinosaur.create(dinosaur_params)
+
     if @dinosaur.save
       redirect_to dinosaurs_path
     else
       render "new"
     end
+  end
+
+  def update
+    @dinosaur.update(dinosaur_params)
+    redirect_to dinosaur_path(@dinosaur)
   end
 
   private
