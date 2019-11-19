@@ -1,0 +1,15 @@
+<h1>Create a new Dino</h1>
+
+<%= simple_form_for @dinosaur do |dino| %>
+  <%= f.input :name %>
+  <%= f.input :species %>
+  <%= f.input :age %>
+  <%= f.input :gender %>
+  <%= f.input :food %>
+  <%= f.input :price %>
+  <%= f.input :policy %>
+  <%= f.input :habits %>
+  <%= f.input :location %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+
+<%= end %>
