@@ -26,8 +26,12 @@
     <h2> Reviews: </h2>
   </div>
 
-<%= link_to "Edit", edit_dinosaur_path %>
-<%= link_to "List all", dinosaurs_path %>
+<p>
+<%= link_to "Edit", edit_dinosaur_path %> |
+<%= link_to "List all", dinosaurs_path %> |
+<%= link_to "Delete", dinosaur_path(@dinosaur.id), method: :delete %>
+
+</p>
 
 
 </div>
