@@ -1,18 +1,4 @@
-
 <h1>Create a new Dino</h1>
 
-<div class="form">
-  <%= simple_form_for @dinosaur do |f| %>
-    <%= f.input :name %>
-    <%= f.input :species %>
-    <%= f.input :age %>
-    <%= f.input :gender %>
-    <%= f.input :food %>
-    <%= f.input :price %>
-    <%= f.input :policy %>
-    <%= f.input :habits %>
-    <%= f.input :location %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
-</div>
+<%= render "form", dinosaur: @dinosaur %>
 
