@@ -23,6 +23,7 @@ class DinosaursController < ApplicationController
   end
 
   def update
+    @dinosaur = Dinosaur.find(params[:id])
     if @dinosaur.update(dinosaur_params)
       redirect_to dinosaur_path(@dinosaur), notice: "Dino was updated successfully."
     else
