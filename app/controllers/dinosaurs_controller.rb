@@ -6,7 +6,11 @@ class DinosaursController < ApplicationController
   def new
     @dinosaur = Dinosaur.new
   end
-
+  
+  def show
+    @dinosaur = Dinosaur.find(params[:id])
+  end
+  
   def create
     @dinosaur = Dinosaur.create(dinosaur_params)
 
@@ -27,5 +31,4 @@ class DinosaursController < ApplicationController
   def dinosaur_params
     params.require(:dinosaur).permit(:name, :species, :age, :gender, :food, :price, :policy, :habits, :location)
   end
-
 end
