@@ -6,11 +6,11 @@ class DinosaursController < ApplicationController
   def new
     @dinosaur = Dinosaur.new
   end
-  
+
   def show
     @dinosaur = Dinosaur.find(params[:id])
   end
-  
+
   def create
     @dinosaur = Dinosaur.create(dinosaur_params)
 
@@ -22,8 +22,15 @@ class DinosaursController < ApplicationController
   end
 
   def update
-    @dinosaur.update(dinosaur_params)
-    redirect_to dinosaur_path(@dinosaur)
+    if @dinosaur.update(dinosaur_params)
+      redirect_to dinosaur_path(@dinosaur), notice: "Dino was updated successfully."
+    else
+      render :edit
+    end
+  end
+
+  def edit
+    @dinosaur = Dinosaur.find(params[:id])
   end
 
   private

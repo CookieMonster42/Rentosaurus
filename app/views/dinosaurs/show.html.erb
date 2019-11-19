@@ -1,4 +1,4 @@
-<div>
+<div class="container" mt-5>
   <div>
     <h1> <%= @dinosaur.name  %></h1>
     <p> <%= @dinosaur.location  %></p>
@@ -25,4 +25,10 @@
   <div>
     <h2> Reviews: </h2>
   </div>
+
+<%= link_to "Edit", edit_dinosaur_path %>
+<%= link_to "List all", dinosaurs_path %>
+
+
 </div>
+
