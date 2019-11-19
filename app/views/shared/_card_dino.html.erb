@@ -1,7 +1,7 @@
 <div class="card-product border-bottom border-secondary">
   <div class="card-product-infos">
     <h2><%= dino.name %></h2>
-    <p>dino description</p>
+    <p>€ <%= dino.price %></p>
     <div class="ml-auto">
       <%= link_to "🗑", dinosaur_path(dino.id), method: :delete %>
     </div>
