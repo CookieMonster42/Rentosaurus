@@ -1,7 +1,14 @@
 <div class="">
   <div class="d-flex p-0">
     <div class="container bg-white">
-        <% @dinosaurs.each |dino| do %>
+        <%= link_to "add a dino", new_dinosaur_path %>
+        <%= link_to "delete a dino", new_dinosaur_path %>
+        <%# @dinosaurs.each |dino| do %>
+        <%= render 'shared/card_dino' %>
+        <%= render 'shared/card_dino' %>
+        <%= render 'shared/card_dino' %>
+        <%= render 'shared/card_dino' %>
+        <%= render 'shared/card_dino' %>
         <%= render 'shared/card_dino' %>
     </div>
     <div class="container bg-primary">
