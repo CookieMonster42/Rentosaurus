@@ -1,10 +1,12 @@
 class DinosaursController < ApplicationController
   def index
     @dinosaurs = Dinosaur.all
+    @club = policy_scope(Dinosaur)
   end
 
   def new
     @dinosaur = Dinosaur.new
+    authorize @dinosaur
   end
 
   def show
@@ -14,11 +16,11 @@ class DinosaursController < ApplicationController
   def create
     @dinosaur = Dinosaur.create(dinosaur_params)
     @dinosaur.user_id = current_user.id
+    authorize @dinosaur
     if @dinosaur.save
       redirect_to dinosaurs_path
     else
       render "new"
-
     end
   end
 
