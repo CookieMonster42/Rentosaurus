@@ -22,6 +22,12 @@ class DinosaursController < ApplicationController
     redirect_to dinosaur_path(@dinosaur)
   end
 
+  def destroy
+    @dinosaur = Dinosaur.find(params[:id])
+    @dinosaur.destroy
+    redirect_to dinosaurs_path
+  end
+
   private
 
   def dinosaur_params

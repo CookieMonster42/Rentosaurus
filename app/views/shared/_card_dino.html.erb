@@ -2,6 +2,9 @@
   <div class="card-product-infos">
     <h2><%= dino.name %></h2>
     <p>dino description</p>
+    <div class="ml-auto">
+      <%= link_to "🗑", dinosaur_path(dino.id), method: :delete %>
+    </div>
   </div>
   <img class=" ml-auto" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
 </div>
