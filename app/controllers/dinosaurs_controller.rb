@@ -2,6 +2,15 @@ class DinosaursController < ApplicationController
   def index
     @dinosaurs = Dinosaur.all
     @club = policy_scope(Dinosaur)
+
+    @dinosaurs = Dinosaur.geocoded #returns dinos with coordinates
+
+    @markers = @dinosaurs.map do |dino|
+      {
+        lat: dino.latitude,
+        lng: dino.longitude
+      }
+    end
   end
 
   def new
