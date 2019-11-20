@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # resources :users, only: [:show, :edit, :update, :destroy] do
-    resources :dinosaurs, only: [:index, :new, :create, :destroy, :show, :edit, :update]
-  # end
+  resources :dinosaurs
+  resources :dinosaurs do
+    resources :bookings, only: [:new, :create, :index]
+  end
   get '/:id', to: 'pages#account', as: :account
   # get 'user/:id', to: 'users#show', as: :user
 end

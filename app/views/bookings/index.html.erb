@@ -1,0 +1,11 @@
+<h1>All Bookings</h1>
+<% @bookings.each do |booking| %>
+<div>
+  <h3>
+    <%= booking.user.email %>
+  </h3>
+  <p>
+    <%= booking.dinosaur.name %>
+  </p>
+</div>
+<% end %>

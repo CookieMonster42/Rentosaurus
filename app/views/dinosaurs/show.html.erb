@@ -35,6 +35,7 @@
   <% if policy(@dinosaur).destroy? %>
      | <%= link_to "Delete", dinosaur_path(@dinosaur.id), method: :delete %>
   <% end %>
+  <%= link_to "Book it now", new_dinosaur_booking_path(@dinosaur) %>
 </p>
 
 
