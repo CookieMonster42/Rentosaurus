@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
   <%= image_tag "logo_rentosaurus.png" %>
   <% end %>
 
@@ -13,12 +13,12 @@
 
       <% if current_user %>
         <li class="nav-item">
-          <%= link_to "Host a Dino", new_user_dinosaur_path(current_user), class: "nav-link" %>
+          <%= link_to "Host a Dino", new_dinosaur_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "dinohost.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Account", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "My Account", account_path(current_user), class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
