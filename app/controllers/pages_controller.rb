@@ -4,6 +4,5 @@ class PagesController < ApplicationController
   end
 
   def account
-    @user = User.where(name: params[:id]).first
   end
 end
