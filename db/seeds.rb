@@ -4,7 +4,7 @@ Dinosaur.destroy_all
 User.destroy_all
 
 puts "Adds 10 new User records..."
-10.times do
+5.times do
   user = User.create!(
     name: Faker::FunnyName.name,
     password: 'valid_password',
@@ -13,7 +13,7 @@ puts "Adds 10 new User records..."
   )
 
   puts "Adds 5 new Dinosaur records..."
-  5.times do
+  2.times do
     dino = Dinosaur.create!(
       name: Faker::FunnyName.name,
       species: Faker::Games::Pokemon.name,
