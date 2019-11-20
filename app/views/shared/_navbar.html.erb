@@ -10,16 +10,19 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <%= link_to "Host a Dino", new_dinosaur_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "Dinos List", dinosaurs_path, class: "nav-link" %>
-      </li>
+        <li class="nav-item">
+          <%= link_to "Dino List", dinosaurs_path, class: "nav-link" %>
+        </li> -->
 
       <% if current_user %>
         <li class="nav-item">
-          <%= link_to "Host a Dino", new_user_dinosaur_path(current_user), class: "nav-link" %>
+          <%= link_to "Host a Dino", new_dinosaur_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Dino List", dinosaurs_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "dinohost.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
