@@ -1,7 +1,7 @@
 class DinosaursController < ApplicationController
   def index
     @dinosaurs = Dinosaur.all
-    @club = policy_scope(Dinosaur)
+    @dinosaur = policy_scope(Dinosaur)
   end
 
   def new
