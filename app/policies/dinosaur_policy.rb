@@ -16,4 +16,18 @@ class DinosaurPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def destroy?
+    is_allowed?
+  end
+
+  def update?
+    is_allowed?
+  end
+
+  private
+
+  def is_allowed?
+    record.user == user
+  end
 end

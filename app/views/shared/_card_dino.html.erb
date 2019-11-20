@@ -3,7 +3,9 @@
     <h2><%= dino.name %></h2>
     <p>€ <%= dino.price %></p>
     <div class="ml-auto">
-      <%= link_to "🗑", dinosaur_path(dino.id), method: :delete %>
+      <% if policy(dino).destroy? %>
+        <%= link_to "🗑", dinosaur_path(dino.id), method: :delete %>
+      <% end %>
     </div>
   </div>
   <img class=" ml-auto" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />

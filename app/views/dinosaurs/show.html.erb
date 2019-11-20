@@ -27,10 +27,14 @@
   </div>
 
 <p>
-<%= link_to "Edit", edit_dinosaur_path %> |
-<%= link_to "List all", dinosaurs_path %> |
-<%= link_to "Delete", dinosaur_path(@dinosaur.id), method: :delete %>
 
+  <%= link_to "List all", dinosaurs_path %>
+  <% if policy(@dinosaur).edit? %>
+    | <%= link_to "Edit", edit_dinosaur_path %>
+  <% end %>
+  <% if policy(@dinosaur).destroy? %>
+     | <%= link_to "Delete", dinosaur_path(@dinosaur.id), method: :delete %>
+  <% end %>
 </p>
 
 

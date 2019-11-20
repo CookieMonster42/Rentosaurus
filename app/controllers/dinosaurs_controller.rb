@@ -11,6 +11,7 @@ class DinosaursController < ApplicationController
 
   def show
     @dinosaur = Dinosaur.find(params[:id])
+    authorize @dinosaur
   end
 
   def create
@@ -26,6 +27,7 @@ class DinosaursController < ApplicationController
 
   def update
     @dinosaur = Dinosaur.find(params[:id])
+    authorize @dinosaur
     if @dinosaur.update(dinosaur_params)
       redirect_to dinosaur_path(@dinosaur), notice: "Dino was updated successfully."
     else
@@ -35,10 +37,12 @@ class DinosaursController < ApplicationController
 
   def edit
     @dinosaur = Dinosaur.find(params[:id])
+    authorize @dinosaur
   end
 
   def destroy
     @dinosaur = Dinosaur.find(params[:id])
+    authorize @dinosaur
     @dinosaur.destroy
     redirect_to dinosaurs_path
   end
