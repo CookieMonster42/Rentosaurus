@@ -1,6 +1,7 @@
 class Dinosaur < ApplicationRecord
   validates :name, presence: true
   belongs_to :user
+  has_many :bookings
   # validate that dinosaur needs a :name, :species, :age, :gender, :food, :price, :policy, :habits, :location
   # validates :species, presence: true
   # validates :age, presence: true

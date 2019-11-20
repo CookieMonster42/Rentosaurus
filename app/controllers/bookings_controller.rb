@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @dinosaur = Dinosaur.find(params[:dinosaur_id])
+    authorize @booking
   end
 
   def create
