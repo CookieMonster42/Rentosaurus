@@ -1,29 +1,33 @@
 class DinosaursController < ApplicationController
   def index
     @dinosaurs = Dinosaur.all
+    @club = policy_scope(Dinosaur)
   end
 
   def new
     @dinosaur = Dinosaur.new
+    authorize @dinosaur
   end
 
   def show
     @dinosaur = Dinosaur.find(params[:id])
+    authorize @dinosaur
   end
 
   def create
     @dinosaur = Dinosaur.create(dinosaur_params)
     @dinosaur.user_id = current_user.id
+    authorize @dinosaur
     if @dinosaur.save
       redirect_to dinosaurs_path
     else
       render "new"
-
     end
   end
 
   def update
     @dinosaur = Dinosaur.find(params[:id])
+    authorize @dinosaur
     if @dinosaur.update(dinosaur_params)
       redirect_to dinosaur_path(@dinosaur), notice: "Dino was updated successfully."
     else
@@ -33,10 +37,12 @@ class DinosaursController < ApplicationController
 
   def edit
     @dinosaur = Dinosaur.find(params[:id])
+    authorize @dinosaur
   end
 
   def destroy
     @dinosaur = Dinosaur.find(params[:id])
+    authorize @dinosaur
     @dinosaur.destroy
     redirect_to dinosaurs_path
   end
