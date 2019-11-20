@@ -1,8 +1,8 @@
 class Dinosaur < ApplicationRecord
-  validates :name, uniqueness: true, presence: true
-  belongs_to :user
-  # validate that dinosaur needs a :name, :species, :age, :gender, :food, :price, :policy, :habits, :location
   validates :name, presence: true
+  belongs_to :user
+  has_many :bookings
+  # validate that dinosaur needs a :name, :species, :age, :gender, :food, :price, :policy, :habits, :location
   # validates :species, presence: true
   # validates :age, presence: true
   # validates :gender, presence: true
@@ -11,4 +11,7 @@ class Dinosaur < ApplicationRecord
   # validates :policy, presence: true
   # validates :habits, presence: true
   # validates :location, presence: true
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
