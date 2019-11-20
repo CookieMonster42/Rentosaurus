@@ -1,11 +1,11 @@
 class DinosaursController < ApplicationController
   def index
     @dinosaurs = Dinosaur.all
-    @club = policy_scope(Dinosaur)
+    @dinosaur = policy_scope(Dinosaur)
 
-    @dinosaurs = Dinosaur.geocoded #returns dinos with coordinates
+    @geo_coded_dinosaurs = Dinosaur.geocoded #returns dinos with coordinates
 
-    @markers = @dinosaurs.map do |dino|
+    @markers = @geo_coded_dinosaurs.map do |dino|
       {
         lat: dino.latitude,
         lng: dino.longitude
