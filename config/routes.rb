@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :dinosaurs, only: [:index, :new, :create, :destroy, :show, :edit, :update]
+  resources :dinosaurs do
+    resources :bookings, only: [:new, :create]
+  end
   root to: 'pages#home'
 end
