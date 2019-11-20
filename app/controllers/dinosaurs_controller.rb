@@ -8,7 +8,8 @@ class DinosaursController < ApplicationController
     @markers = @dinosaurs.map do |dino|
       {
         lat: dino.latitude,
-        lng: dino.longitude
+        lng: dino.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
       }
     end
   end
