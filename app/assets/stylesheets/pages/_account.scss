@@ -1,0 +1,26 @@
+.container-avatar {
+  width: 600px;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.flex-item {
+  align-items: center;
+
+}
+
+.profile-style {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px
+}
+
+.profil-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

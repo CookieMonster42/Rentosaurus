@@ -1,12 +1,26 @@
-<h1>Hello, <%= current_user.name %>! </h1>
+<div class="profile-style">
+  <div class="container-avatar">
+    <div class="d-justify-content-center">
+      <div class="row">
+        <div class="flex-item col-6 profil-info">
+          <div> <%= image_tag 'dinohost.jpg', class: "avatar-large" %> </div>
+          <p> <%= link_to "Update photo", edit_user_registration_path  %></p>
+        </div>
 
-<h2>Account details</h2>
+        <div class="flex-item col-6">
+          <h1>Hello, I am <%= current_user.name %>! </h1>
+          <p> <%= link_to "Edit profile", edit_user_registration_path  %></p>
 
-<p> Username: <%= current_user.name %> </p>
+          <h4>Account details</h4>
 
-<p> Email: <%= current_user.email %> </p>
+          <p> Username: <%= current_user.name %> </p>
 
-<p> Picture: <%= image_tag 'dinohost.jpg', class:"img-thumbnail" %> </p>
+          <p> Email: <%= current_user.email %> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p> <%= link_to "Edit your details", edit_user_registration_path  %></p>
+
 
