@@ -20,19 +20,21 @@
   </div>
 </div>
 
-<div class="container bg-gray">
-  <h1>Bookings</h1>
-  <% current_user.bookings.each do |booking| %>
-  <%= render 'shared/bookingcard', booking: booking %>
-  <% end %>
-</div>
+<div class="wrapper">
+  <div class="container bg-gray">
+    <h2>Bookings</h2>
+    <% current_user.bookings.each do |booking| %>
+    <%= render 'shared/bookingcard', booking: booking %>
+    <% end %>
+  </div>
 
-<div class="container">
-  <h1>Your Dinos</h1>
-  <% @dinosaurs.each do |d| %>
-  <% if d.user_id == current_user.id %>
-  <%= link_to d.name, dinosaur_path(d.id) %>
-  <% end %>
-  <% end%>
+  <div class="container">
+    <h2>Your Dinos</h2>
+    <% @dinosaurs.each do |d| %>
+    <% if d.user_id == current_user.id %>
+    <%= link_to d.name, dinosaur_path(d.id) %>
+    <% end %>
+    <% end%>
+  </div>
 </div>
 
