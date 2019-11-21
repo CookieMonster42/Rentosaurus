@@ -1,4 +1,27 @@
 
+.search {
+    left: 10%;
+    top: 20%;
+    width: 300px;
+    border: 0.5px solid lightgrey;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    color: #444444;
+    h4 {
+      font-weight: bold;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+    .btn {
+      background-color: #d23b4c;
+      color: white;
+      font-size: 16px;
+    }
+}
+
 #background_image {
   background-image: url('dino1.jpg'), linear-gradient(rgba(0,0,0,5.3));
   background-size: cover;
@@ -14,17 +37,6 @@
   border-radius: 5px;
   opacity: 0.9;
 }
-
-// h1 {
-//   background-color: white;
-//   color: black;
-//   font-weight: bold;
-//   position: absolute;
-//   border-radius: 4px;
-//   padding: 2px 15px;
-//   right: 5%;
-//   top: 10%;
-// }
 .banner {
   background-image: url("https://images.squarespace-cdn.com/content/595ec7a636e5d3078c603268/1509410747641-DPSEUM9R18ND01V0KQ0D/3+dinosaurs.JPG?format=1000w&content-type=image%2Fjpeg");
   background-size: cover;
@@ -32,23 +44,4 @@
   background-position: center;
   height: 100vh;
   position: relative;
-}
-.button{
-  position: absolute;
-    border-radius: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    color: white;
-    top: 30%;
-    right: 5%;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: black;
-  &:hover {
-    text-decoration: none;
-    background-color: white;
-    color: black;
-  }
 }
