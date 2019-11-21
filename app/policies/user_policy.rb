@@ -9,4 +9,18 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def account?
+    true
+  end
+
+  def update?
+    true
+  end
+
+  private
+
+  def is_allowed?
+    record.user == user
+  end
+
 end

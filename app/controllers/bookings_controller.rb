@@ -1,13 +1,13 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.all
+    @booking = policy_scope(Booking)
+  end
+
   def new
     @booking = Booking.new
     @dinosaur = Dinosaur.find(params[:dinosaur_id])
     authorize @booking
-  end
-
-  def index
-    @bookings = Booking.all
-    @booking = policy_scope(Booking)
   end
 
   def create
@@ -16,8 +16,8 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.dinosaur = Dinosaur.find(params[:dinosaur_id])
     @booking.user = current_user
-    if @booking.save!
-      redirect_to account_path(:id)
+    if @booking.save
+      redirect_to account_path(current_user)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
     # this is for the pundit
     authorize @booking
     if @booking.update(booking_params)
-      redirect_to account_path(:id)
+      redirect_to account_path(current_user)
     else
       render :edit
     end

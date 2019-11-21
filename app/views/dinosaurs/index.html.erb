@@ -1,3 +1,17 @@
+<div class="search-card">
+<div class="search-all-dino">
+<%= form_tag dinosaurs_path, class: "form-dino", method: :get do %>
+
+  <%= text_field_tag :query,
+    params[:query],
+    class: "search-location-dino form-control",
+    placeholder: "🔎 Location"
+  %>
+  <%= submit_tag "Search", class: "btn-dino" %>
+<% end %>
+</div>
+</div>
+
 <div class="">
   <div class="d-flex p-0">
     <div class="container bg-white">
@@ -17,3 +31,16 @@
     ></div>
   </div>
 </div>
+
+
+
+<!-- PRICE FILTER -->
+<%#= text_field_tag :min_price, params[:min_price],
+    class: "search-location-dino form-control",
+    placeholder: "Min Price"
+  %>
+
+  <%#= text_field_tag :max_price, params[:max_price],
+    class: "search-location-dino form-control",
+    placeholder: "Max Price"
+  %>
