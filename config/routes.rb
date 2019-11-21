@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :dinosaurs
   resources :dinosaurs do
-    resources :bookings, only: [:new, :create, :index]
+    resources :bookings, only: [:new, :create]
   end
-  get '/:id', to: 'pages#account', as: :account
-  # get 'user/:id', to: 'users#show', as: :user
+  resources :bookings, only: [:destroy, :index, :edit, :update]
+  
+  get "/:id", to: 'pages#account', as: :account
+  # get '/:id', to: 'pages#account', as: :account
+  post '/:id', to: 'pages#update'
 end

@@ -12,7 +12,7 @@ class DinosaursController < ApplicationController
 
     @dinosaur = policy_scope(Dinosaur)
 
-    @geo_coded_dinosaurs = Dinosaur.geocoded #returns dinos with coordinates
+    @geo_coded_dinosaurs = @dinosaurs.geocoded # returns dinos with coordinates
 
     @markers = @geo_coded_dinosaurs.map do |dino|
       {

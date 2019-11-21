@@ -5,7 +5,7 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-  def new?
+  def update?
     true
   end
 
@@ -15,5 +15,15 @@ class BookingPolicy < ApplicationPolicy
 
   def index?
     true
+  end
+
+  def destroy?
+    is_allowed?
+  end
+
+  private
+
+  def is_allowed?
+    record.user == user
   end
 end

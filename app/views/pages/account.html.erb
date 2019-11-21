@@ -1,12 +1,46 @@
-<h1>Hello, <%= current_user.name %>! </h1>
 
-<h2>Account details</h2>
+<h1>Hello, <%= @user.name %>! </h1>
 
-<p> Username: <%= current_user.name %> </p>
+<div class="profile-position">
+  <div class="container-avatar">
+    <div class="d-justify-content-center">
+      <div class="row">
+        <div class="flex-item col-6 profile-info">
+          <!-- <div> <%#= image_tag 'dinohost.jpg', class: "avatar-account" %> </div> -->
+          <div><%= cl_image_tag @user.photo, height: 300, width: 300, crop: :fill, class: "avatar-account"%></div>
+          <p> <%= simple_form_for @user, url: account_path(@user), html: {method: :post} do |f|%>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.button :submit, "update photo" %>
+            <% end %>
+          </p>
+          <!-- <div> <%#= link_to "Update photo", edit_user_registration_path  %> </div> -->
+        </div>
 
-<p> Email: <%= current_user.email %> </p>
+        <div class="flex-item col-6 profile-description">
+          <h1>Hello, I am <%= current_user.name %>! </h1>
+          <p> <%= link_to "Edit profile", edit_user_registration_path  %></p>
 
-<p> Picture: <%= image_tag 'dinohost.jpg', class:"img-thumbnail" %> </p>
 
-<p> <%= link_to "Edit your details", edit_user_registration_path  %></p>
+          <h4>Account details</h4>
+
+          <p> Username: <%= current_user.name %> </p>
+
+          <p> Email: <%= current_user.email %> </p>
+
+          <div> <%= link_to "Reviews", edit_user_registration_path %> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div>
+    <h1>Bookings</h1>
+    <% @bookings.each do |booking| %>
+    <%= render 'shared/bookingcard', booking: booking %>
+    <% end %>
+  </div>
+</div>
 
