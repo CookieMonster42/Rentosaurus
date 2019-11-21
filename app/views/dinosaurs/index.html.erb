@@ -1,7 +1,6 @@
 <div class="">
   <div class="d-flex p-0">
     <div class="container bg-white">
-        <%= link_to "add a dino", new_dinosaur_path %>
         <% @dinosaurs.each  do |dino| %>
           <%= link_to dinosaur_path(dino.id) do %>
             <%= render 'shared/card_dino', dino: dino %>
