@@ -1,9 +1,10 @@
 <div class="card-product border-bottom border-secondary">
   <div class="card-product-infos">
-    <h2><%= dino.name %></h2>
-    <h6><%= dino.location %></h6>
-    <p>ID: <%= dino.id %></p>
-    <p>€ <%= dino.price %></p>
+    <div class="card-text">
+      <h2 class="card-title-name"><%= dino.name %></h2>
+      <h6><%= dino.location %></h6>
+      <p>€ <%= dino.price %></p>
+    </div>
     <div class="ml-auto">
       <% if policy(dino).destroy? %>
         <%= link_to "🗑", dinosaur_path(dino.id), method: :delete %>
