@@ -1,31 +1,31 @@
 <div class="container" mt-5>
   <div>
-    <h1> <%= @dinosaur.name  %></h1>
+    <p><%= cl_image_tag @dinosaur.photo, height: 300, width: 1000, crop: :fit %></p>
+    <h1> <%= @dinosaur.name %></h1>
     <p> <%= @dinosaur.location  %></p>
   </div>
 
   <div>
     <h2> Details: </h2>
-    <p> Species: <%=  @dinosaur.species %></p>
-    <p> Location: <%=  @dinosaur.location %></p>
-    <p> Age: <%=  @dinosaur.age %></p>
-    <p> Gender: <%=  @dinosaur.gender %></p>
-    <p> Favourite Food: <%=  @dinosaur.food %></p>
-    <p> Habits: <%=  @dinosaur.habits %></p>
+    <p> Species: <%= @dinosaur.species %></p>
+    <p> Age: <%= @dinosaur.age %></p>
+    <p> Gender: <%= @dinosaur.gender %></p>
+    <p> Favourite Food: <%= @dinosaur.food %></p>
+    <p> Habits: <%= @dinosaur.habits %></p>
   </div>
 
   <div>
     <h2> Description: </h2>
-    <p> <%= @dinosaur.description %> </p>
+    <p> <%= @dinosaur.policy %> </p>
   </div>
 
-  <div>
+  <!-- <div>
     <h2> Availability: </h2>
-  </div>
+  </div> -->
 
-  <div>
+<!--   <div>
     <h2> Reviews: </h2>
-  </div>
+  </div> -->
 
 <p>
   <%= link_to "List all", dinosaurs_path %>

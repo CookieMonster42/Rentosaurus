@@ -1,6 +1,6 @@
 class DinosaursController < ApplicationController
-  def index
 
+  def index
     # SEARCH
     if params[:query].present?
       @dinosaurs = Dinosaur.near(params[:query])# .where('price < ? AND price < ?', params[:min_price], params[:max_price])
@@ -9,21 +9,15 @@ class DinosaursController < ApplicationController
       @dinosaurs = Dinosaur.all
     end
 
-
     @dinosaur = policy_scope(Dinosaur)
-
     @geo_coded_dinosaurs = @dinosaurs.geocoded # returns dinos with coordinates
-
     @markers = @geo_coded_dinosaurs.map do |dino|
       {
         lat: dino.latitude,
         lng: dino.longitude
       }
     end
-
-
-    # Search
-
+    #Search
   end
 
   def new
@@ -37,7 +31,7 @@ class DinosaursController < ApplicationController
   end
 
   def create
-    @dinosaur = Dinosaur.create(dinosaur_params)
+    @dinosaur = Dinosaur.new(dinosaur_params)
     @dinosaur.user_id = current_user.id
     authorize @dinosaur
     if @dinosaur.save
@@ -72,6 +66,6 @@ class DinosaursController < ApplicationController
   private
 
   def dinosaur_params
-    params.require(:dinosaur).permit(:name, :species, :age, :gender, :food, :price, :policy, :habits, :location)
+    params.require(:dinosaur).permit(:name, :species, :age, :gender, :food, :price, :policy, :habits, :location, :photo)
   end
 end
