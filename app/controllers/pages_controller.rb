@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   end
 
   def account
+    @dinosaurs = Dinosaur.all
   end
 end
