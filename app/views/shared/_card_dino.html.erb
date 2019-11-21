@@ -1,6 +1,7 @@
 <div class="card-product border-bottom border-secondary">
   <div class="card-product-infos">
     <h2><%= dino.name %></h2>
+    <p>ID: <%= dino.id %></p>
     <p>€ <%= dino.price %></p>
     <div class="ml-auto">
       <% if policy(dino).destroy? %>

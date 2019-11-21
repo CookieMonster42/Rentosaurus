@@ -1,0 +1,9 @@
+<h1>Here should be your booking</h1>
+
+<%= simple_form_for [@booking] do |f| %>
+    <%= f.input :time_start, as: :date, html5: true %>
+    <%#= timetable.input :time_end, :as => :wday %>
+    <%= f.input :time_end, as: :date, html5: true %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+
+<% end %>
