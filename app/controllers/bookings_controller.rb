@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.dinosaur = Dinosaur.find(params[:dinosaur_id])
     @booking.user = current_user
-    if @booking.save!
+    if @booking.save
       redirect_to account_path(current_user)
     else
       render :new
@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     # this is for the pundit
     authorize @booking
-    if @booking.update!(booking_params)
+    if @booking.update(booking_params)
       redirect_to account_path(current_user)
     else
       render :edit
