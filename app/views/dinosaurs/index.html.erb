@@ -1,13 +1,13 @@
 <div class="search-card">
 <div class="search-all-dino">
-<%= form_tag dinosaurs_path, method: :get do %>
+<%= form_tag dinosaurs_path, class: "form-dino", method: :get do %>
 
   <%= text_field_tag :query,
     params[:query],
     class: "search-location-dino form-control",
     placeholder: "🔎 Location"
   %>
-  <%= submit_tag "Search", class: "btn-dino mt-3 rounded-lg" %>
+  <%= submit_tag "Search", class: "btn-dino" %>
 <% end %>
 </div>
 </div>
