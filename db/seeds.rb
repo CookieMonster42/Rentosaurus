@@ -1,9 +1,10 @@
 
 puts "Cleans DB..."
+Booking.destroy_all
 Dinosaur.destroy_all
 User.destroy_all
 
-puts "Adds 10 new User records..."
+puts "Adds 5 new User records..."
 5.times do
   user = User.create!(
     name: Faker::FunnyName.name,
@@ -12,7 +13,7 @@ puts "Adds 10 new User records..."
     email: Faker::Internet.email
   )
 
-  puts "Adds 5 new Dinosaur records..."
+  puts "Adds 2 new Dinosaur records..."
   2.times do
     dino = Dinosaur.create!(
       name: Faker::FunnyName.name,
