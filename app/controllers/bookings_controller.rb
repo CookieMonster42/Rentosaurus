@@ -28,6 +28,17 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    # this is for the pundit
+    authorize @booking
+    if @booking.update(booking_params)
+      redirect_to account_path(:id)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     # this is for the pundit

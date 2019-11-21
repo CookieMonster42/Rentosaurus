@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    is_allowed?
+    true
   end
 
   def create?
