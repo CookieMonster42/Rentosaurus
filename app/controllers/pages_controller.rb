@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def account
     @bookings = Booking.where(user: current_user)
+    @dinosaurs = Dinosaur.all
     @user = User.find(params[:id])
     authorize @user
   end
