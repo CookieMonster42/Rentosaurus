@@ -5,6 +5,8 @@ class UsersController < ApplicationController
      authorize @user
   end
 
+  private
+  
   def article_params
     params.require(:user).permit(:email, :name, :photo)
   end
