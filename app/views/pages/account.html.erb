@@ -1,12 +1,23 @@
-<h1>Hello, <%= current_user.name %>! </h1>
+<h1>Hello, <%= @user.name %>! </h1>
 
 <h2>Account details</h2>
 
-<p> Username: <%= current_user.name %> </p>
+<p> Username: <%= @user.name %> </p>
 
-<p> Email: <%= current_user.email %> </p>
+<p> Email: <%= @user.email %> </p>
 
-<p> Picture: <%= image_tag 'dinohost.jpg', class:"img-thumbnail" %> </p>
+<!-- <p> Picture: <#%= image_tag 'dinohost.jpg', class:"img-thumbnail" %> </p> -->
+
+<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
+
+
+<p> <%= simple_form_for @user, url: account_path(@user), html: {method: :post} do |f|%>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit %>
+  <% end %>
+</p>
+
 
 <p> <%= link_to "Edit your details", edit_user_registration_path  %></p>
 

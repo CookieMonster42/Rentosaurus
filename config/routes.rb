@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :index]
   end
   get '/:id', to: 'pages#account', as: :account
-  # get 'user/:id', to: 'users#show', as: :user
+  post '/:id', to: 'pages#update'
 end
