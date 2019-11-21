@@ -17,7 +17,8 @@ class DinosaursController < ApplicationController
     @markers = @geo_coded_dinosaurs.map do |dino|
       {
         lat: dino.latitude,
-        lng: dino.longitude
+        lng: dino.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { dino: dino })
       }
     end
 

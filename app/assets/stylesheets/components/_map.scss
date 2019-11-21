@@ -1,8 +1,16 @@
 
-/* We just give you a Gmaps with random width/height */
+// /* We just give you a Gmaps with random width/height */
 #map {
   height: 100vh;
   position: sticky;
   top: 0;
 }
 
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
