@@ -33,3 +33,6 @@ end
 
 # Geocoder
 gem 'geocoder'
+
+# Search
+gem 'pg_search', '~> 2.3.0'

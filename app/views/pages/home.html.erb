@@ -4,3 +4,19 @@
 with your favourite Dinosaur</h1>
 <%= link_to "See all Dinosaurs", dinosaurs_path, class:"button" %>
 </div>
+
+
+<!-- SEARCH -->
+
+<div class="search">
+  <h4 class="mb-4">Book unique Dinosaur around the world</h4>
+  <p>Where:</p>
+<%= form_tag dinosaurs_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Berlin"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary mt-3" %>
+<% end %>
+</div>

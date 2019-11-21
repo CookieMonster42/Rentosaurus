@@ -1,6 +1,11 @@
 class DinosaursController < ApplicationController
   def index
-    @dinosaurs = Dinosaur.all
+    if params[:query].present?
+      # @dinosaurs = Dinosaur.where("location ILIKE ?", "%#{params[:query]}%")
+      @dinosaurs = Dinosaur.near(params[:query])
+    else
+      @dinosaurs = Dinosaur.all
+    end
     @dinosaur = policy_scope(Dinosaur)
 
     @geo_coded_dinosaurs = Dinosaur.geocoded #returns dinos with coordinates
@@ -11,6 +16,10 @@ class DinosaursController < ApplicationController
         lng: dino.longitude
       }
     end
+
+
+    # Search
+
   end
 
   def new
