@@ -1,11 +1,15 @@
 class DinosaursController < ApplicationController
   def index
+
+    # SEARCH
     if params[:query].present?
+      @dinosaurs = Dinosaur.near(params[:query])# .where('price < ? AND price < ?', params[:min_price], params[:max_price])
       # @dinosaurs = Dinosaur.where("location ILIKE ?", "%#{params[:query]}%")
-      @dinosaurs = Dinosaur.near(params[:query])
     else
       @dinosaurs = Dinosaur.all
     end
+
+
     @dinosaur = policy_scope(Dinosaur)
 
     @geo_coded_dinosaurs = Dinosaur.geocoded #returns dinos with coordinates
