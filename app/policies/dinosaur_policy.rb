@@ -19,7 +19,6 @@ class DinosaurPolicy < ApplicationPolicy
 
   def destroy?
     is_allowed?
-    # true
   end
 
   def update?
