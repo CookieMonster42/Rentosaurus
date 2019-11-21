@@ -4,6 +4,25 @@ class PagesController < ApplicationController
   end
 
   def account
+
+    @user = User.find(params[:id])
+    authorize @user
+  end
+
+   def update
+     @user = User.find(params[:id])
+     authorize @user
+     if @user.update(user_params)
+       redirect_to account_path(@user), notice: "Profile pic was updated successfully."
+     else
+       render :update
+     end
+   end
+
+private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :photo)
     @bookings = Booking.where(user: current_user)
   end
 end
