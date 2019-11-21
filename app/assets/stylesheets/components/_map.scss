@@ -8,6 +8,9 @@
 
 .mapboxgl-popup {
   max-width: 200px;
+  img {
+    width: 200px;
+  }
 }
 
 .mapboxgl-popup-content {
