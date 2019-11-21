@@ -1,3 +1,33 @@
+.search-card {
+  border-bottom: 0.5px solid lightgrey;
+  border-top: 0.5px solid lightgrey;
+  padding: 20px 20px;
+}
+
+.form-dino {
+  display: flex;
+}
+
+.btn-dino {
+ background-color: black;
+ color: white;
+ border: 2px solid black;
+ border-radius: 30px;
+ padding: 0px 20px;
+ margin-left: 5px;
+}
+
+.search-location-dino {
+  border: 2px solid black;
+  border-radius: 30px;
+}
+
+.search-all-dino {
+  background-color: white;
+  color: #444444;
+  width: 300px;
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;

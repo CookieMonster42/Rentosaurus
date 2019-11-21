@@ -1,10 +1,20 @@
+
+<h1>Hello, <%= @user.name %>! </h1>
+
 <div class="profile-position">
   <div class="container-avatar">
     <div class="d-justify-content-center">
       <div class="row">
         <div class="flex-item col-6 profile-info">
-          <div> <%= image_tag 'dinohost.jpg', class: "avatar-account" %> </div>
-          <div> <%= link_to "Update photo", edit_user_registration_path  %> </div>
+          <!-- <div> <%#= image_tag 'dinohost.jpg', class: "avatar-account" %> </div> -->
+          <div><%= cl_image_tag @user.photo, height: 300, width: 300, crop: :fill, class: "avatar-account"%></div>
+          <p> <%= simple_form_for @user, url: account_path(@user), html: {method: :post} do |f|%>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.button :submit, "update photo" %>
+            <% end %>
+          </p>
+          <!-- <div> <%#= link_to "Update photo", edit_user_registration_path  %> </div> -->
         </div>
 
         <div class="flex-item col-6 profile-description">
@@ -19,6 +29,7 @@
     </div>
   </div>
 </div>
+
 
 <div class="wrapper">
   <div class="container bg-gray">
@@ -35,6 +46,13 @@
     <%= link_to d.name, dinosaur_path(d.id) %>
     <% end %>
     <% end%>
+  </div>
+<div class="container">
+  <div>
+    <h1>Bookings</h1>
+    <% @bookings.each do |booking| %>
+    <%= render 'shared/bookingcard', booking: booking %>
+    <% end %>
   </div>
 </div>
 
