@@ -9,4 +9,10 @@
 <p> Picture: <%= image_tag 'dinohost.jpg', class:"img-thumbnail" %> </p>
 
 <p> <%= link_to "Edit your details", edit_user_registration_path  %></p>
+<div class="container">
+  <h1>Bookings</h1>
+  <% current_user.bookings.each do |booking| %>
+  <%= render 'shared/bookingcard', booking: booking %>
+  <% end %>
+</div>
 
