@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def account
-
+    @dinosaurs = Dinosaur.all
     @user = User.find(params[:id])
     authorize @user
   end
