@@ -38,8 +38,8 @@
          <div class="user-dino-card">
            <%= link_to dinosaur_path(d), :action => 'go' do %>
            <div><%= cl_image_tag d.photo, height: 200, width: 200, class: "dino-pp" %></div>
-           <h5 class="mb-1"><%= link_to d.name.capitalize, dinosaur_path(d.id) %></h5>
-           <p class="mb-3"><%=  d.location.capitalize %></p>
+           <h5 class="mb-1 mt-2"><%= link_to d.name.capitalize, dinosaur_path(d.id) %></h5>
+           <p class="mb-3 pb-4"><%=  d.location.capitalize %></p>
          </div>
          <% end %>
          <% end%>
@@ -52,7 +52,7 @@
       <h4><strong>My Bookings</strong></h4>
       <% @bookings.each do |booking| %>
       <div class="actions d-flex flex-row">
-        <%= link_to dinosaur_path(booking), :action => 'go' do %>
+        <%= link_to dinosaur_path(booking.dinosaur), :action => 'go' do %>
 
         <div><%= cl_image_tag booking.dinosaur.photo, height: 200, width: 200, class: "dino-pp" %></div>
 
