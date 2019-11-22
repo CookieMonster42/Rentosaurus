@@ -1,34 +1,36 @@
-<div class="search-card">
-<div class="search-all-dino">
-<%= form_tag dinosaurs_path, class: "form-dino", method: :get do %>
+<div class="container">
+  <div class="search-card">
+  <div class="search-all-dino">
+  <%= form_tag dinosaurs_path, class: "form-dino", method: :get do %>
 
-  <%= text_field_tag :query,
-    params[:query],
-    class: "search-location-dino form-control",
-    placeholder: "🔎 Location"
-  %>
-  <%= submit_tag "Search", class: "btn-dino" %>
-<% end %>
-</div>
-</div>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-location-dino form-control",
+      placeholder: "🔎 Location"
+    %>
+    <%= submit_tag "Search", class: "btn-dino" %>
+  <% end %>
+  </div>
+  </div>
 
-<div class="">
-  <div class="d-flex p-0">
-    <div class="container bg-white">
-        <% @dinosaurs.each  do |dino| %>
-          <%= link_to dinosaur_path(dino.id), class:"text-decoration-none" do %>
-            <%= render 'shared/card_dino', dino: dino %>
+  <div class="">
+    <div class="d-flex p-0">
+      <div class="container bg-white">
+          <% @dinosaurs.each  do |dino| %>
+            <%= link_to dinosaur_path(dino.id), class:"text-decoration-none" do %>
+              <%= render 'shared/card_dino', dino: dino %>
+            <% end %>
           <% end %>
-        <% end %>
+      </div>
+      <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        class="container "
+      ></div>
     </div>
-    <div
-      id="map"
-      style="width: 100%;
-      height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      class="container "
-    ></div>
   </div>
 </div>
 
