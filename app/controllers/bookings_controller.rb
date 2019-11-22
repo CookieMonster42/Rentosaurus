@@ -17,10 +17,10 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.dinosaur = Dinosaur.find(params[:dinosaur_id])
     @booking.user = current_user
-    if @booking.save!
+    if @booking.save
       redirect_to account_path(current_user)
-    # else
-    #   redirect_to account_path(current_user)
+    else
+      redirect_to dinosaur_path(@dinosaur)
     end
   end
 
