@@ -23,7 +23,8 @@
 
       <% if current_user %>
         <li class="nav-item dropdown">
-          <%= image_tag "dinohost.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%#= cl_image_tag @user.photo, height: 300, width: 300, crop: :fill, class: "avatar-account"%>
+          <%= cl_image_tag @user.photo, height: 40, width: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My Account", account_path(current_user), class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
