@@ -1,5 +1,6 @@
-<h2><%= dino.name %></h2>
-<p><%= dino.location %></p>
 <div>
-  <%= image_tag "http://www.orangesmile.com/common/img_final_large/lisbon_sightseeing.jpg", alt: "alttext" %>
+  <%= cl_image_tag dino.photo %>
 </div>
+<h2><%= dino.name %></h2>
+<p><%= "#{dino.location}" %></p>
+<p><%= "€#{dino.price} per Day" %></p>
