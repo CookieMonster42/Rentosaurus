@@ -1,0 +1,68 @@
+h1 {
+  font-weight: bold
+}
+
+.link {
+  color: black;
+  margin-top: 10px;
+  border: 2px solid lightgrey;
+  background-color: white;
+  font-size: 16px;
+  padding: 10px 10px;
+  margin-bottom: none;
+}
+
+.link:hover {
+  color: grey;
+  border: 2px solid grey;
+  background-color: white;
+  text-decoration: none;
+}
+
+.button-pink {
+  background-color: #d23b4c;
+  color: white;
+  font-size: 16px;
+  border: none;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding: 10px 10px;
+}
+
+.button-pink:hover {
+  background-color: #d23b4c;
+}
+
+.button-position {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  width: 600px;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding-bottom: 15px;
+
+  h1 {
+    padding-top: 15px;
+  }
+}
+
+.position {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 75px;
+  padding-top: 50px;
+}
+
+#background {
+  background-color: rgb(30,30,30);
+  opacity: 0.5
+}
+
+.wrapper {
+  background-color: white;
+}
