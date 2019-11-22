@@ -4,19 +4,27 @@
     <h1> <%= @dinosaur.name %></h1>
     <p> <%= @dinosaur.location  %></p>
   </div>
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <div class="card my-2">
+        <h2> Details: </h2>
+        <p> Species: <%= @dinosaur.species %></p>
+        <p> Age: <%= @dinosaur.age %></p>
+        <p> Gender: <%= @dinosaur.gender %></p>
+        <p> Favourite Food: <%= @dinosaur.food %></p>
+        <p> Habits: <%= @dinosaur.habits %></p>
+      </div>
 
-  <div>
-    <h2> Details: </h2>
-    <p> Species: <%= @dinosaur.species %></p>
-    <p> Age: <%= @dinosaur.age %></p>
-    <p> Gender: <%= @dinosaur.gender %></p>
-    <p> Favourite Food: <%= @dinosaur.food %></p>
-    <p> Habits: <%= @dinosaur.habits %></p>
-  </div>
-
-  <div>
-    <h2> Description: </h2>
-    <p> <%= @dinosaur.policy %> </p>
+      <div class="card my-2">
+        <h2> Description: </h2>
+        <p> <%= @dinosaur.policy %> </p>
+      </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div class="card my-2 bg-primary h-100">
+        <%= render 'shared/bookingform' %>
+      </div>
+    </div>
   </div>
 
   <!-- <div>

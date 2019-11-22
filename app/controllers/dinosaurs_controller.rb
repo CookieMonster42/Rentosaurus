@@ -29,6 +29,19 @@ class DinosaursController < ApplicationController
   def show
     @dinosaur = Dinosaur.find(params[:id])
     authorize @dinosaur
+    @booking = Booking.new
+    authorize @booking
+
+    # @booking = Booking.new(booking_params)
+    # # this is for the pundit
+    # authorize @booking
+    # @booking.dinosaur = Dinosaur.find(params[:dinosaur_id])
+    # @booking.user = current_user
+    # if @booking.save
+    #   redirect_to account_path(current_user)
+    # else
+    #   render :new
+    # end
   end
 
   def create
@@ -68,5 +81,9 @@ class DinosaursController < ApplicationController
 
   def dinosaur_params
     params.require(:dinosaur).permit(:name, :species, :age, :gender, :food, :price, :policy, :habits, :location, :photo)
+  end
+
+  def booking_params
+    params.require(:booking).permit(:time_start, :time_end)
   end
 end
