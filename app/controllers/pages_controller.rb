@@ -14,7 +14,7 @@ class PagesController < ApplicationController
     @user = current_user
     authorize @user
     if @user.update(user_params)
-      redirect_to account_path(@user), notice: "Profile pic was updated successfully."
+      redirect_to account_path(current_user), notice: "Profile pic was updated successfully."
     else
       render :update
     end
