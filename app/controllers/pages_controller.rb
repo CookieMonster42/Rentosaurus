@@ -6,12 +6,12 @@ class PagesController < ApplicationController
   def account
     @bookings = Booking.where(user: current_user)
     @dinosaurs = Dinosaur.all
-    @user = User.find(params[:id])
+    @user = current_user
     authorize @user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     authorize @user
     if @user.update(user_params)
       redirect_to account_path(@user), notice: "Profile pic was updated successfully."

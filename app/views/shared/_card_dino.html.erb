@@ -2,7 +2,6 @@
   <div class="card-product-infos">
     <h2><%= dino.name %></h2>
     <h6><%= dino.location %></h6>
-    <p>ID: <%= dino.id %></p>
     <p>€ <%= dino.price %></p>
     <div class="ml-auto">
       <% if policy(dino).destroy? %>
@@ -10,5 +9,7 @@
       <% end %>
     </div>
   </div>
-  <img class=" ml-auto" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <!-- <img class=" ml-auto" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> -->
+  <p><%= cl_image_tag dino.photo, height: 300, width: 300, crop: :fill%></p>
+  <!-- ,class="ml-auto"  -->
 </div>

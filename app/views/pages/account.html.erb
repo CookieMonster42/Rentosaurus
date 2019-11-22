@@ -49,10 +49,16 @@
   </div>
 <div class="container">
   <div>
-    <h1>Bookings</h1>
-    <% @bookings.each do |booking| %>
-    <%= render 'shared/bookingcard', booking: booking %>
-    <% end %>
+    <div>
+      <h1>Bookings</h1>
+        <% @bookings.each do |booking| %>
+        <%= render 'shared/bookingcard', booking: booking %>
+        <div class="actions">
+          <%= link_to "edit", edit_booking_path(booking) %>
+          | <%= link_to "cancel this Booking", booking_path(booking), method: :delete %>
+        </div>
+        <% end %>
+    </div>
   </div>
 </div>
 

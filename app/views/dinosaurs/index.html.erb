@@ -16,7 +16,7 @@
   <div class="d-flex p-0">
     <div class="container bg-white">
         <% @dinosaurs.each  do |dino| %>
-          <%= link_to dinosaur_path(dino.id) do %>
+          <%= link_to dinosaur_path(dino.id), class:"text-decoration-none" do %>
             <%= render 'shared/card_dino', dino: dino %>
           <% end %>
         <% end %>
@@ -27,7 +27,7 @@
       height: 600px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      class="container bg-primary"
+      class="container "
     ></div>
   </div>
 </div>
