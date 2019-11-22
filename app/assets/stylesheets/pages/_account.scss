@@ -1,10 +1,87 @@
+
+body {
+  color: #444444;
+}
+
+p {
+  font-weight: lighter;
+}
+
+h4 {
+  margin-bottom: 30px;
+}
+
+// ACTIVITY
+
+.account {
+ margin-bottom: 70px;
+}
+
+.user {
+  margin-top: 50px;
+  width: 500px;
+  padding-bottom: 30px;
+  border-bottom: 0.5px solid lightgrey;
+}
+
+.user-greet {
+  border-bottom: 0.5px solid lightgrey;
+  padding-bottom: 40px;
+}
+
+.user-dino {
+  margin-top: 40px;
+  padding-bottom: 30px;
+  border-bottom: 0.5px solid lightgrey;
+}
+
+.user-booking {
+  margin-top: 40px;
+  padding-bottom: 30px;
+}
+
+.user-dino-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.booking-detail {
+  margin-right: 10px;
+}
+
+.dino-pp {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.mb-1 {
+  text-decoration: none;
+}
+
+.mb-3 {
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+// PROFILE
+
+.profile {
+  display: flex;
+  margin-top: 50px;
+  // position: sticky;
+}
+
+.profile-box {
+  width: 250px;
+}
+
 .container-avatar {
-  width: 600px;
   padding-right: 15px;
   padding-left: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   border-radius: 4px;
   padding-bottom: 15px;
+  height: 450px;
 }
 
 .flex-item {
@@ -12,17 +89,12 @@
 
 }
 
-.profile-position {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px
-}
-
 .profile-info {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 0.5px solid lightgrey;
 }
 
 .profile-description {
@@ -33,9 +105,6 @@
   width: 140px;
   border-radius: 50%;
   height: 140px;
-}
-
-.wrapper {
-  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
