@@ -1,10 +1,10 @@
-<div class="card w-50">
+<div class="w-100 wrapper">
   <h2>Choose your dates</h2>
   <%= simple_form_for [@dinosaur, @booking] do |f| %>
       <%= f.input :time_start, as: :date, html5: true%>
       <%#= timetable.input :time_end, :as => :wday %>
       <%= f.input :time_end, as: :date, html5: true %>
       <%= f.hidden_field :dinosaur_id, value: @dinosaur.id %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
+      <%= f.button :submit, class: 'btn btn-dinored w-100 align-self-center' %>
   <% end %>
 </div>
