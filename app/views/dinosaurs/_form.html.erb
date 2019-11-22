@@ -11,7 +11,10 @@
     <%= f.input :habits %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-
+  <div class = "button-position">
     <%= f.submit "Host your dino", class: 'btn btn-primary button-pink' %>
-  <% end %>
+    <% end %>
+    <p><%= link_to "Cancel", dinosaurs_path, class: "btn btn-primary link" %></p>
+  </div>
 </div>
+
