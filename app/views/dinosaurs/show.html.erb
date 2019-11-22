@@ -1,12 +1,14 @@
 <div class="container" mt-5>
   <div>
     <p><%= cl_image_tag @dinosaur.photo, height: 300, width: 1000, crop: :fit %></p>
-    <h1> <%= @dinosaur.name %></h1>
-    <p> <%= @dinosaur.location  %></p>
+    <h1><%= @dinosaur.name.capitalize %></h1>
+    <% if !@dinosaur.location.empty? %>
+      <p>Location: <%= @dinosaur.location  %></p>
+    <% end %>
   </div>
   <div class="row">
     <div class="col-lg-6 col-sm-12">
-      <div class="wrapper my-2">
+      <div class="wrapper my-2" id="details">
         <h2> Details: </h2>
         <p> Species: <%= @dinosaur.species %></p>
         <p> Age: <%= @dinosaur.age %></p>
@@ -14,13 +16,13 @@
         <p> Favourite Food: <%= @dinosaur.food %></p>
         <p> Habits: <%= @dinosaur.habits %></p>
       </div>
-      <div class="wrapper my-2">
+      <div class="wrapper my-2" id="description">
         <h2> Description: </h2>
         <p> <%= @dinosaur.policy %> </p>
       </div>
     </div>
-    <div class="col-lg-3 col-sm-12 mr-auto">
-      <div class="my-2 h-100">
+    <div class="col-lg-3 col-sm-12 ml-auto">
+      <div class="h-100" id="bookingform">
         <%= render 'shared/bookingform' %>
       </div>
     </div>
