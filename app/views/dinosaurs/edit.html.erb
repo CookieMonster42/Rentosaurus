@@ -4,30 +4,23 @@
       <h1> Edit your Dino</h1>
 
       <div class="form">
-  <%= simple_form_for @dinosaur do |f| %>
-    <%= f.input :name %>
-    <%= f.input :species %>
-    <%#= f.input :age %>
-    <%#= f.input :gender %>
-    <%#= f.input :food %>
-    <%= f.input :price %>
-    <%= f.input :location %>
-    <%#= f.input :policy %>
-    <%= f.input :habits %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-  <div class = "button-position">
-    <%= f.submit "Save changes", class: 'btn btn-primary button-pink' %>
-    <% end %>
-    <p><%= link_to "Cancel", dinosaurs_path, class: "btn btn-primary link" %></p>
-  </div>
-</div>
-      <div>
-      <%= link_to "Show dinosaurs", @dinosaur %>
-      </div>
-
-      <div>
-      <%= link_to "Back", dinosaurs_path %>
+        <%= simple_form_for @dinosaur do |f| %>
+          <%= f.input :name %>
+          <%= f.input :species %>
+          <%#= f.input :age %>
+          <%#= f.input :gender %>
+          <%#= f.input :food %>
+          <%= f.input :price %>
+          <%= f.input :location %>
+          <%#= f.input :policy %>
+          <%= f.input :habits %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+        <div class = "button-position">
+          <%= f.submit "Save changes", class: 'btn btn-primary button-pink' %>
+          <% end %>
+          <p><%= link_to "Back", dinosaurs_path, class: "btn btn-primary link" %></p>
+        </div>
       </div>
     </div>
   </div>
