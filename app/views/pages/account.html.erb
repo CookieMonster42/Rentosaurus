@@ -48,10 +48,10 @@
 
      </div>
 
-     <div class="user-booking d-flex flex-column mb-5">
+     <div class="user-booking d-flex flex-column">
       <h4><strong>My Bookings</strong></h4>
       <% @bookings.each do |booking| %>
-      <div class="actions d-flex flex-row">
+      <div class="actions d-flex flex-row mb-2">
         <%= link_to dinosaur_path(booking.dinosaur), :action => 'go' do %>
 
         <div><%= cl_image_tag booking.dinosaur.photo, height: 200, width: 200, class: "dino-pp" %></div>
