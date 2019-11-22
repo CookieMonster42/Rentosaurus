@@ -4,6 +4,7 @@
       <%= f.input :time_start, as: :date, html5: true%>
       <%#= timetable.input :time_end, :as => :wday %>
       <%= f.input :time_end, as: :date, html5: true %>
+      <%= f.hidden_field :dinosaur_id, value: @dinosaur.id %>
       <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
 </div>
