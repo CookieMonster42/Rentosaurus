@@ -8,13 +8,15 @@ class PagesController < ApplicationController
     @dinosaurs = Dinosaur.all
     @user = current_user
     authorize @user
+    @dinosaur = Dinosaur.find(Booking.last.dinosaur_id)
+    @booking = Booking.last
   end
 
   def update
     @user = current_user
     authorize @user
     if @user.update(user_params)
-      redirect_to account_path(@user), notice: "Profile pic was updated successfully."
+      redirect_to account_path(current_user), notice: "Profile pic was updated successfully."
     else
       render :update
     end
