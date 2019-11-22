@@ -8,8 +8,6 @@ class PagesController < ApplicationController
     @dinosaurs = Dinosaur.all
     @user = current_user
     authorize @user
-    @dinosaur = Dinosaur.find(Booking.last.dinosaur_id)
-    @booking = Booking.last
   end
 
   def update
