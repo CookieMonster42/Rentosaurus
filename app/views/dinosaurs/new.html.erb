@@ -1,7 +1,13 @@
-<h1>Create a new Dino</h1>
+<body>
+  <div id="background-img">
+    <div class="position">
+      <div class="wrapper">
+        <h1>What kind of Dino do you want to host?</h1>
 
-<%= render "form", dinosaur: @dinosaur %>
+        <%= render "form", dinosaur: @dinosaur %>
 
-<p><%= link_to "Cancel", dinosaurs_path %></p>
-
-
+        <p class="link"><%= link_to "Cancel", dinosaurs_path %></p>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,36 @@
+h1 {
+  font-weight: bold
+}
+
+.link {
+  margin-top: 10px;
+}
+
+.button-pink {
+  background-color: #d23b4c;
+  color: white;
+  font-size: 16px;
+  border: none;
+}
+
+.button-pink:hover {
+  background-color: #d23b4c;
+}
+
+.wrapper {
+  width: 600px;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  padding-bottom: 15px;
+}
+
+.position {
+  display: flex;
+  justify-content: center;
+}
+
+#background-img {
+  background-image: url('b6.png')
+}
