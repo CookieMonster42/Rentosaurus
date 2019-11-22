@@ -12,14 +12,15 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @dinosaur = Dinosaur.find(params[:dinosaur_id])
     # this is for the pundit
     authorize @booking
     @booking.dinosaur = Dinosaur.find(params[:dinosaur_id])
     @booking.user = current_user
-    if @booking.save
+    if @booking.save!
       redirect_to account_path(current_user)
-    else
-      render :new
+    # else
+    #   redirect_to account_path(current_user)
     end
   end
 
@@ -50,6 +51,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:time_start, :time_end)
+    params.require(:booking).permit(:time_start, :time_end, :dinosaur_id)
   end
 end
