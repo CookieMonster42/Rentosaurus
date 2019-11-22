@@ -22,7 +22,7 @@ class DinosaurPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    is_allowed?
   end
 
   private
