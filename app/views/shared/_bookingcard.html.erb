@@ -1,10 +1,10 @@
 <div class="bookingcard card">
   <%#= link_to dinosaurs_path do %>
-  <h3>Dinosaur Name: <%= booking.dinosaur.name %></h3>
+  <h3>Dinosaur Name: <%= @dinosaur.name %></h3>
   <div class="card d-flex">
     <div class="details">
-      <p>Booking start at: <%= booking.time_start %></p>
-      <p>Booking end at: <%= booking.time_end %></p>
+      <p>Booking start at: <%= @booking.time_start %></p>
+      <p>Booking end at: <%= @booking.time_end %></p>
 <!--  <p>Created at: <%#= booking.created_at.to_s(:rfc822).slice(0,25) %></p>
       <p>Updated at: <%#= booking.updated_at.to_s(:rfc822).slice(0,25) %></p> -->
     </div>
