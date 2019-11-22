@@ -1,13 +1,29 @@
 .card-product {
-  background-size: cover;
-  background-position: center;
   height: 150px;
+  width: 100%;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 22px;
   color: black;
   font-weight: bolder;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background: white;
+  border-bottom: 1;
+  padding: 0 9px 0 28px;
+}
+
+.width-80 {
+  width: 220px;
+}
+
+.image-holder {
+  width: 120px;
+  height: 135px;
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
 }
