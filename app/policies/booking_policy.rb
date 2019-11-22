@@ -5,6 +5,10 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    true
+  end
+
   def update?
     true
   end
