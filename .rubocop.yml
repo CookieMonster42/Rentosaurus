@@ -36,7 +36,7 @@ MethodMissingSuper:
 Style/FrozenStringLiteralComment:
   Enabled: false
 LineLength:
-  Max: 120
+  Max: 160
 Style/EmptyMethod:
   Enabled: false
 Bundler/OrderedGems:
