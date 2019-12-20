@@ -1,9 +1,17 @@
 .btn-dinored {
-  background-color: $dinored;
+  background-color: $dino-dark;
   color: white;
 }
 .btn-dinored:hover {
-  background-color: $dinored;
+  background-color: $dino-dark;
   color: white;
   text-decoration: none;
+}
+
+.btn-login {
+  color: white;
+}
+
+.btn-login:hover {
+  color: white !important;
 }

@@ -7,8 +7,10 @@ p {
   font-weight: lighter;
 }
 
-h4 {
-  margin-bottom: 30px;
+.title {
+  font-size: 2rem;
+  color: $dino-dark;
+  font-weight: bold;
 }
 
 // ACTIVITY
