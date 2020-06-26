@@ -1,7 +1,7 @@
 .search-card {
   border-bottom: 0.5px solid lightgrey;
+  border-top: 0.5px solid lightgrey;
   padding: 20px 20px;
-  margin-bottom: 20px;
 }
 
 .form-dino {
@@ -9,18 +9,17 @@
 }
 
 .btn-dino {
- background-color: #d23b4c;
- font-size: 16px;
+ background-color: black;
  color: white;
- border-radius: 3px;
+ border: 2px solid black;
+ border-radius: 30px;
  padding: 0px 20px;
  margin-left: 5px;
- border: none;
 }
 
 .search-location-dino {
-  border: 0.5px solid lightgrey;
-  border-radius: 3px;
+  border: 2px solid black;
+  border-radius: 30px;
 }
 
 .search-all-dino {
@@ -29,7 +28,14 @@
   width: 300px;
 }
 
-
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-bottom: 1;
+}
 
 .card-product img {
   height: 90%;
@@ -51,4 +57,6 @@
   margin-top: 8px;
 }
 
-
+.card-product .card-product-infos {
+  padding: 16px;
+}

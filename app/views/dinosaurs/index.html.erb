@@ -13,13 +13,15 @@
   </div>
   </div>
 
-<div class="">
-  <div class="d-flex p-0">
-    <div class="container bg-white">
-        <% @dinosaurs.each  do |dino| %>
-            <%= render 'shared/card_dino', dino: dino %>
-        <% end %>
-    </div>
+  <div class="">
+    <div class="d-flex p-0">
+      <div class="container bg-white">
+          <% @dinosaurs.each  do |dino| %>
+            <%= link_to dinosaur_path(dino.id), class:"text-decoration-none" do %>
+              <%= render 'shared/card_dino', dino: dino %>
+            <% end %>
+          <% end %>
+      </div>
       <div
         id="map"
         style="width: 100%;
